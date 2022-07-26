@@ -42,6 +42,7 @@ on my nvidia optimus laptop <br>
 - ```sb-redshift``` depends on <a href="http://jonls.dk/redshift/">redshift</a> for bluelight dimming functionality
 - ```sb-time``` opens <a href="https://dmedvinsky.github.io/gsimplecal/">gsimplecal</a> when clicked <br>
 - ```switchoutput``` does not work on <a href="https://pipewire.org/">pipewire</a> installations (depends on ```pacmd``` from <a href="https://www.freedesktop.org/wiki/Software/PulseAudio/">pulseaudio</a>)
+  - on PipeWire installations, you are able to configure the scripts ```switchoutput_pipewire``` and ```switchinput_pipewire``` (depends on [WirePlumber](https://github.com/PipeWire/wireplumber)) to be able to middle-click the ```sb-pulsevol``` and ```sb-microphone``` to switch your audio output/input
 
 ## Signaling Changes
 The scripts used in this statusbar are able to use signals to be updated, instead of updating constantly every x seconds. The update signal for each statusbar module is defined in the last column of ```blocks.h```. <br>
@@ -50,7 +51,7 @@ For example, ```sb-pulsevol``` has an update signal of 2, so running ```pkill -R
 Alternatively, running ```kill -36 $(pidof dwmblocks)``` would have the same effect in this scenario (add 34 to the signal number)
 
 ## Clickable Modules
-The built in ```statuscmd``` patch linked above allows for click/scroll actions on each module. See my statusbar scripts linked in my dotfiles repo for examples of me utilizing the ```$BLOCK_BUTTON``` variable to achieve this.
+The built in ```statuscmd``` patch linked above allows for click/scroll actions on each module. See my statusbar scripts linked in my dotfiles repo for examples of me utilizing the ```$BUTTON``` variable to achieve this.
 
 ## Other Links
 Some of my other configurations for programs including scripts needed for parts of this build of dwmblocks can be found on my GitHub:
